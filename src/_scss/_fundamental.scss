@@ -1,0 +1,26 @@
+@import '_variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+#root,
+#root>div {
+    font-family: 'Source Sans Pro', sans-serif;
+    height: 100%
+}
+
+a {
+    text-decoration: none;
+    &:visited {
+        color: $green;
+    }
+}
+
+body {
+    background: $mainbackground;
+}

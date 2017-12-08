@@ -1,0 +1,116 @@
+@import '_fundamental.scss';
+.container {
+    display: flex;
+    flex-direction: column;
+    >[class$='-container'] {
+        padding: $containerpadding;
+    }
+    .header-container {
+        display: inherit;
+        flex: 1.5;
+        justify-content: space-between;
+        background: $headercontainer;
+        max-height: $maxheaderheight;
+        .actions {
+            display: inherit;
+            width: 150px;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+    .chat-container {
+        display: inherit;
+        flex-direction: inherit;
+        flex: 9;
+        overflow-y: auto;
+        overflow-x: hidden;
+        .loading,
+        .error {
+            display: inherit;
+            height: $full;
+            justify-content: center;
+            align-items: center;
+            img {
+                max-width: $spinnersize;
+                max-height: $spinnersize;
+            }
+        }
+        div {
+            &.bubble-container {
+                display: block;
+                .bubble {
+                    display: flex;
+                    align-items: flex-start;
+                    max-width: $bubblemaxwidth;
+                    width: 100%;
+                    >div {
+                        margin: $bubblemargin;
+                        &.avatar {
+                            >img {
+                                border: $border;
+                            }
+                        }
+                    }
+                    .dialog {
+                        border-radius: $bubbleradius;
+                        padding: $bubblepadding;
+                        .show-more,
+                        a,
+                        p {
+                            color: $green;
+                            cursor: pointer;
+                        }
+                        .question-container {
+                            margin: $qcontainermargin;
+                        }
+                    }
+                    &.post {
+                        flex-direction: row-reverse;
+                        margin-left: auto;
+                        .dialog {
+                            background: $postbackground;
+                            padding-right: $bubbleminipadding;
+                            border-top-right-radius: $bubbleminiradius;
+                            margin-left: auto;
+                            padding-left: $bubblemargin;
+                        }
+                    }
+                    &.get {
+                        margin-right: auto;
+                        .dialog {
+                            background: $getbackground;
+                            padding-left: $bubbleminipadding;
+                            border-top-left-radius: $bubbleminiradius;
+                        }
+                    }
+                    .avatar {
+                        min-height: $avatarsize;
+                        min-width: $avatarsize;
+                        max-width: $avatarsize;
+                        max-height: $avatarsize;
+                        img {
+                            border-radius: $half;
+                            max-width: $full;
+                            max-height: $full;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .input-container {
+        border-top: $border;
+        max-height: $maxinputheight;
+        flex: 1;
+        >input {
+            height: $full;
+            width: $full;
+            padding: $inputpadding;
+            outline: none;
+            border: 0;
+        }
+        .disabled {
+            opacity: $disabledopacity;
+        }
+    }
+}

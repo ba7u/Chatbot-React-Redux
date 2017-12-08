@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+.chatbot-container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+iframe.chatbot {
+    margin-bottom: 15px;
+    border: 1px solid #CECECE;
+    border-radius: 5px;
+    display: none;
+}
+
+button.chatbot-icon{
+    margin-left: auto;
+}
+
+iframe.active{
+    display: block;
+}
